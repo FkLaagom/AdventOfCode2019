@@ -8,13 +8,15 @@ namespace AdventToCode2019
 {
     class Program
     {
-        delegate string ResultDelegate();
+        public delegate string ResultDelegate();
         static Dictionary<string, ResultDelegate> ResultDelegates;
+
+        private static string getstr() => "";
         static void Main(string[] args)
         {
             ResultDelegates = GetResultDelegates();
             BenchmarkAll();
-
+            
            // BenchFullDebug();
             Console.ReadLine();
         }
