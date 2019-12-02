@@ -10,8 +10,6 @@ namespace AdventToCode2019
     {
         public delegate string ResultDelegate();
         static Dictionary<string, ResultDelegate> ResultDelegates;
-
-        private static string getstr() => "";
         static void Main(string[] args)
         {
             ResultDelegates = GetResultDelegates();
