@@ -13,6 +13,8 @@ namespace Benchmark.Benchmarks
     public class BenchAll
     {
         [Benchmark]
+        public string BenchSample() => _Sample.Result();
+        [Benchmark]
         public string Bench1A() => _1A.Result();
         [Benchmark]
         public string Bench1B() => _1B.Result();
