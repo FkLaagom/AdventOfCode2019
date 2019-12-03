@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BenchmarkDotNet.Running;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -12,8 +13,9 @@ namespace AdventToCode2019
         static Dictionary<string, ResultDelegate> ResultDelegates;
         static void Main(string[] args)
         {
-            ResultDelegates = GetResultDelegates();
-            BenchmarkAll();
+            var summary = BenchmarkRunner.Run<Benchmarks>();
+            //ResultDelegates = GetResultDelegates();
+            //BenchmarkAll();
             
            // BenchFullDebug();
             Console.ReadLine();
