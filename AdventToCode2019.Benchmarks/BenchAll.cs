@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Benchmark.Benchmarks
 {
-    [SimpleJob(RunStrategy.ColdStart, targetCount: 5)]
+    [SimpleJob(RunStrategy.ColdStart, targetCount: 50)]
     //[SimpleJob(RunStrategy.Throughput)]
     [MinColumn, MaxColumn, MeanColumn, MedianColumn]
     public class BenchAll
