@@ -13,13 +13,50 @@ namespace AdventToCode2019
         static Dictionary<string, ResultDelegate> ResultDelegates;
         static void Main(string[] args)
         {
-            //var summary = BenchmarkRunner.Run<Benchmarks>();
             ResultDelegates = GetResultDelegates();
-            BenchmarkAll();
-            
-            // BenchFullDebug();
-            Console.ReadLine();
+            ToggleMenue();
+            Console.SetCursorPosition(0, 5);
+            Menu:
+            Console.WriteLine("N/A\t Run the latest solution\r\n--a\tRuns all \r\n--q\t Quit");
+            var input = Console.ReadLine();
+            if (input == "")
+                BenchmarkSingle(ResultDelegates.LastOrDefault().Value, ResultDelegates.LastOrDefault().Key);
+            else if (input == "--a")
+                BenchmarkAll();
+            else if (input == "--q")
+                Environment.Exit(0);
+            else
+                BenchmarkAll();
+            goto Menu;
         }
+
+        private static void ToggleMenue()
+        {
+            Menu:
+            Console.WriteLine("\n\n\n\n\nN/A\tRun the latest solution\r\n--a\tRuns all \r\n--q\tQuit");
+            var input = Console.ReadLine();
+            if (input == "")
+            {
+                Console.Clear();
+                BenchmarkSingle(ResultDelegates.LastOrDefault().Value, ResultDelegates.LastOrDefault().Key);
+                Console.WriteLine("Press any key to continue..");
+                Console.ReadLine();
+                Console.Clear();
+            }
+            else if (input == "--a")
+            {
+                Console.Clear();
+                BenchmarkAll();
+                Console.WriteLine("Press any key to continue..");
+                Console.ReadLine();
+                Console.Clear();
+            }
+            else if (input == "--q")
+                Environment.Exit(0);
+            else Console.Clear();
+            goto Menu;
+        }
+
         static void BenchmarkAll()
         {
             foreach (var item in ResultDelegates)
@@ -35,33 +72,7 @@ namespace AdventToCode2019
             string print = prompt == null ? "" : $"Day: {prompt} ||";
             Console.WriteLine($"{print} Elapsed Millisec: {stopwatch.ElapsedMilliseconds} || Awnser: {result}");
         }
-        static void BenchFullDebug()
-        {
-            var stopwatch = new Stopwatch();
-            stopwatch.Start();
-            string result = _1A.Result();
-            stopwatch.Stop();
-            Console.WriteLine("1A:" + stopwatch.ElapsedMilliseconds);
 
-            var stopwatch2 = new Stopwatch();
-            stopwatch.Start();
-            string result2 = _1B.Result();
-            stopwatch.Stop();
-            Console.WriteLine("1B:" + stopwatch.ElapsedMilliseconds);
-
-            var stopwatch3 = new Stopwatch();
-            stopwatch.Start();
-            string result3 = _2A.Result();
-            stopwatch.Stop();
-            Console.WriteLine("2A:" + stopwatch.ElapsedMilliseconds);
-
-            var stopwatch4 = new Stopwatch();
-            stopwatch.Start();
-            string result4 = _2B.Result();
-            stopwatch.Stop();
-            Console.WriteLine("2B:" + stopwatch.ElapsedMilliseconds);
-        }
-        
         static Dictionary<string, ResultDelegate> GetResultDelegates()
         {
             var delegates = new Dictionary<string, ResultDelegate>();
@@ -74,21 +85,5 @@ namespace AdventToCode2019
             delegates.OrderBy(x => x.Key);
             return delegates;
         }
-
-        static Dictionary<string, ResultDelegate> GetResultDelegatesHumanReadable()
-        {
-            var delegates = new Dictionary<string, ResultDelegate>();
-            AppDomain.CurrentDomain.GetAssemblies().ToList()
-                .FirstOrDefault(x => x.FullName.StartsWith("AdventToCode2019")).GetTypes()
-                .Where(x => x.Name.StartsWith('_')).ToList()
-                .ForEach(x => {
-                    MethodInfo resultmethod = x.GetMethod("Result");
-                    var del = (ResultDelegate)resultmethod?.CreateDelegate(typeof(ResultDelegate));
-                    delegates.Add(x.Name[1..], del);
-                });
-            return delegates;
-        }
-        
-
     }
 }
