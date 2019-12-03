@@ -10,15 +10,15 @@ namespace AdventToCode2019
     {
         public static string Result() 
         {
-            var inputA = File.ReadLines("3A.txt").First().Split(',');
-            var inputB = File.ReadLines("3A.txt").Last().Split(',');
+            var inputA = File.ReadLines("3A".InputPath()).First().Split(',');
+            var inputB = File.ReadLines("3A".InputPath()).Last().Split(',');
             var setA = GetCordinates(inputA);
             var setB = GetCordinates(inputB);
             var intersections = new HashSet<(int, int)>();
             foreach (var item in setA)
                 if (setB.Contains(item))
                     intersections.Add(item);
-           return "" + intersections.Select(x => Math.Abs(x.Item1) + Math.Abs(x.Item2)).Min(x => x);
+            return "" + intersections.Select(x => Math.Abs(x.Item1) + Math.Abs(x.Item2)).Min(x => x);
         }
 
         private static HashSet<(int,int)> GetCordinates(string[] instructions)

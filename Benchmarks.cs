@@ -12,7 +12,7 @@ namespace AdventToCode2019
     public class Benchmarks
     {
         [Benchmark]
-        public string Day1a() => _1A.Result();
+        public string Day1a() => _3B.Result();
 
         //[Benchmark]
         //public string Day1b() => _1B.Result();

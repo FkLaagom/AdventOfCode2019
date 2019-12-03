@@ -9,7 +9,7 @@ namespace AdventToCode2019
     {
         public static string Result()
         {
-            var input = File.ReadLines("2B.txt").First().Split(',').Select(x => int.Parse(x)).ToArray();
+            var input = File.ReadLines("2B".InputPath()).First().Split(',').Select(x => int.Parse(x)).ToArray();
             for (int i = 0; i < 100; i++)
                 for (int j = 0; j < 100; j++)
                     if (19690720 == getResult(input: input, noun: i, verb: j))

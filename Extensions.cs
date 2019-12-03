@@ -12,8 +12,12 @@ namespace AdventToCode2019
             Array.Copy(source, copy, source.Length);
             return copy;
         }
-
         public static T Declare<T>(this T input, out T output)
             => output = input;
+
+        public static int IndexOf<T>(this T[] source, T obj)
+            => Array.IndexOf(source, obj);
+        public static string InputPath(this string filename)
+            => $"{Environment.CurrentDirectory}/Input/{(filename.Contains('.') ? filename: filename +".txt")}";
     }
 }
