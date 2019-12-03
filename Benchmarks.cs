@@ -7,21 +7,21 @@ using BenchmarkDotNet.Jobs;
 
 namespace AdventToCode2019
 {
-    [SimpleJob(RuntimeMoniker.NetCoreApp30),WarmupCount(0),IterationCount(2),MaxIterationCount(20)]
+    [SimpleJob(RuntimeMoniker.NetCoreApp30)]
     [MinColumn, MaxColumn, MeanColumn, MedianColumn]
     public class Benchmarks
     {
         [Benchmark]
         public string Day1a() => _1A.Result();
 
-        [Benchmark]
-        public string Day1b() => _1B.Result();
+        //[Benchmark]
+        //public string Day1b() => _1B.Result();
 
-        [Benchmark]
-        public string Day2a() => _2A.Result();
+        //[Benchmark]
+        //public string Day2a() => _2A.Result();
 
-        [Benchmark]
-        public string Day2b() => _2B.Result();
+        //[Benchmark]
+        //public string Day2b() => _2B.Result();
 
     }
 }

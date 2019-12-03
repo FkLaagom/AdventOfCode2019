@@ -13,11 +13,11 @@ namespace AdventToCode2019
         static Dictionary<string, ResultDelegate> ResultDelegates;
         static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<Benchmarks>();
-            //ResultDelegates = GetResultDelegates();
-            //BenchmarkAll();
+            //var summary = BenchmarkRunner.Run<Benchmarks>();
+            ResultDelegates = GetResultDelegates();
+            BenchmarkAll();
             
-           // BenchFullDebug();
+            // BenchFullDebug();
             Console.ReadLine();
         }
         static void BenchmarkAll()
