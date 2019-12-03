@@ -7,13 +7,13 @@ using System.Text;
 
 namespace AdventToCode2019.Solutions
 {
-    public class _1A
+    public class NULL_3A
     {
         public static string Result()
         {
-            var input = File.ReadLines("1".InputPath());
+            var input = File.ReadLines("3".InputPath());
 
-            return "ANWSER";
+            return "";
         }
     }
 }

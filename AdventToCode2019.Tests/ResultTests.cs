@@ -1,4 +1,4 @@
-using AdventToCode2019;
+using AdventToCode2019.Solutions;
 using System;
 using Xunit;
 
@@ -9,33 +9,33 @@ namespace XUnitTest
         [Fact]
         public void Test1A()
         {
-            Assert.Equal("3317668", _1A.Result());
+            Assert.Equal("ANWSER", _1A.Result());
         }
-        [Fact]
-        public void Test1B()
-        {
-            Assert.Equal("4973628", _1B.Result());
-        }
-        [Fact]
-        public void Test2A()
-        {
-            Assert.Equal("2894520", _2A.Result());
-        }
-        [Fact]
-        public void Test2B()
-        {
-            Assert.Equal("9342", _2B.Result());
-        }
-        [Fact]
-        public void Test3A()
-        {
-            Assert.Equal("5319", _3A.Result());
-        }
-        [Fact]
-        public void Test3B()
-        {
-            Assert.Equal("122514", _3B.Result());
-        }
+        //[Fact]
+        //public void Test1B()
+        //{
+        //    Assert.Equal("", _1B.Result());
+        //}
+        //[Fact]
+        //public void Test2A()
+        //{
+        //    Assert.Equal("", _2A.Result());
+        //}
+        //[Fact]
+        //public void Test2B()
+        //{
+        //    Assert.Equal("", _2B.Result());
+        //}
+        //[Fact]
+        //public void Test3A()
+        //{
+        //    Assert.Equal("", _3A.Result());
+        //}
+        //[Fact]
+        //public void Test3B()
+        //{
+        //    Assert.Equal("", _3B.Result());
+        //}
         //[Fact]
         //public void Test4A()
         //{

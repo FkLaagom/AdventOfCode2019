@@ -1,4 +1,4 @@
-﻿using AdventToCode2019;
+﻿using AdventToCode2019.Solutions;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
 using System;
@@ -14,16 +14,16 @@ namespace Benchmark.Benchmarks
     {
         [Benchmark]
         public string Bench1A() => _1A.Result();
-        [Benchmark]
-        public string Bench1B() => _1B.Result();
-        [Benchmark]
-        public string Bench2A() => _2A.Result();
-        [Benchmark]
-        public string Bench2B() => _2B.Result();
-        [Benchmark]
-        public string Bench3A() => _3A.Result();
-        [Benchmark]
-        public string Bench3B() => _3B.Result();
+        //[Benchmark]
+        //public string Bench1B() => _1B.Result();
+        //[Benchmark]
+        //public string Bench2A() => _2A.Result();
+        //[Benchmark]
+        //public string Bench2B() => _2B.Result();
+        //[Benchmark]
+        //public string Bench3A() => _3A.Result();
+        //[Benchmark]
+        //public string Bench3B() => _3B.Result();
         //[Benchmark]
         //public string Bench4A() => _4A.Result();
         //[Benchmark]
