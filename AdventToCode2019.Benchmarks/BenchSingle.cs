@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using AdventToCode2019;
+using AdventToCode2019.Solutions;
 
 namespace Benchmark
 {
