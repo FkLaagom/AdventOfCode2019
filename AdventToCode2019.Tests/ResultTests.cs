@@ -1,4 +1,5 @@
 using AdventToCode2019;
+using AdventToCode2019.Solutions;
 using System;
 using Xunit;
 
@@ -36,16 +37,16 @@ namespace XUnitTest
         {
             Assert.Equal("122514", _3B.Result());
         }
-        //[Fact]
-        //public void Test4A()
-        //{
-        //    Assert.Equal("", _4A.Result());
-        //}
-        //[Fact]
-        //public void Test4B()
-        //{
-        //    Assert.Equal("", _4B.Result());
-        //}
+        [Fact]
+        public void Test4A()
+        {
+            Assert.Equal("1079", _4A.Result());
+        }
+        [Fact]
+        public void Test4B()
+        {
+            Assert.Equal("699", _4B.Result());
+        }
         //[Fact]
         //public void Test5A()
         //{

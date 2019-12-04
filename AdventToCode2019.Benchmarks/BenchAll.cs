@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Benchmark.Benchmarks
 {
-    [SimpleJob(RunStrategy.ColdStart, targetCount: 50)]
+    [SimpleJob(RunStrategy.ColdStart, targetCount: 5)]
     //[SimpleJob(RunStrategy.Throughput)]
     [MinColumn, MaxColumn, MeanColumn, MedianColumn]
     public class BenchAll
@@ -26,10 +26,10 @@ namespace Benchmark.Benchmarks
         public string Bench3A() => _3A.Result();
         [Benchmark]
         public string Bench3B() => _3B.Result();
-        //[Benchmark]
-        //public string Bench4A() => _4A.Result();
-        //[Benchmark]
-        //public string Bench4B() => _4B.Result();
+        [Benchmark]
+        public string Bench4A() => _4A.Result();
+        [Benchmark]
+        public string Bench4B() => _4B.Result();
         //[Benchmark]
         //public string Bench5A() => _5A.Result();
         //[Benchmark]
